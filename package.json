@@ -1,0 +1,87 @@
+{
+  "name": "r2-t2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@mantine/carousel": "^5.9.2",
+    "@mantine/core": "^5.9.2",
+    "@mantine/dates": "^5.9.2",
+    "@mantine/dropzone": "^5.9.2",
+    "@mantine/form": "^5.9.2",
+    "@mantine/hooks": "^5.9.2",
+    "@mantine/modals": "^5.9.2",
+    "@mantine/notifications": "^5.9.2",
+    "@mantine/nprogress": "^5.9.2",
+    "@mantine/prism": "^5.9.2",
+    "@mantine/spotlight": "^5.9.2",
+    "@mantine/tiptap": "^5.9.2",
+    "@tabler/icons": "^1.116.1",
+    "@tauri-apps/api": "^1.2.0",
+    "@tiptap/extension-link": "2.0.0-beta.206",
+    "@tiptap/react": "2.0.0-beta.206",
+    "@tiptap/starter-kit": "2.0.0-beta.206",
+    "dayjs": "^1.11.7",
+    "embla-carousel-react": "^7.0.5",
+    "i18next": "^21.10.0",
+    "i18next-browser-languagedetector": "^6.1.8",
+    "js-cookie": "^3.0.1",
+    "localforage": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.18.6",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.4.5",
+    "react-transition-group": "^4.4.5",
+    "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store#9bd993a"
+  },
+  "scripts": {
+    "dev": "tauri dev",
+    "nvmrc": "node -v > .nvmrc",
+    "preclean": "cargo install cargo-sweep -q",
+    "clean": "cd src-tauri && cargo sweep -s && cargo build && cargo build --release && cargo sweep -f && cd ..",
+    "postinstall": "yarn nvmrc",
+    "predev": "yarn nvmrc",
+    "tauri": "tauri",
+    "start": "vite",
+    "rls": "dotenv-load tauri build",
+    "build": "cross-env INLINE_RUNTIME_CHUNK=false yarn vite build",
+    "preview": "vite preview",
+    "serve": "serve -s build",
+    "preinstall": "yarn global add serve sloc @tauri-apps/cli",
+    "sloc": "sloc src src-tauri/src",
+    "update": "concurrently \"yarn upgrade \" \"cd src-tauri && cargo update\"",
+    "update:npm.lock": "npm install --package-lock-only",
+    "update:yarn.lock": "yarn install --mode update-lockfile",
+    "update:pnpm.lock": "pnpm install --lockfile-only"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.2.1",
+    "@vitejs/plugin-react": "^2.2.0",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "dotenv-load": "^2.0.1",
+    "rollup-plugin-visualizer": "^5.8.3",
+    "vite": "^3.2.5",
+    "vite-plugin-top-level-await": "^1.2.2"
+  },
+  "resolutions": {}
+}
